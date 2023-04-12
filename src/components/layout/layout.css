@@ -7,6 +7,7 @@
     grid-template-rows: 150px repeat(5, 1fr) auto;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    color: #ffffff;
   }
   
   .layoutTop {
