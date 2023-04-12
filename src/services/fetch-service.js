@@ -47,3 +47,24 @@ export const getLanguageStats = async () => {
     throw new Error('Unable to retrieve language data.', e.message)
   }
 }
+
+/**
+ * Gets type stats.
+ *
+ * @returns {object} - The recieved json data object.
+ */
+export const getTypeStats = async () => {
+  const url = `${process.env.REACT_APP_API_URL}/stats/type`
+  console.log(url)
+  try {
+    const response = await fetch(url)
+    console.log(response)
+    const json = await response.json()
+    if (response.ok) {
+      return json.types
+    }
+  } catch (e) {
+    console.log(e)
+    throw new Error('Unable to retrieve language data.', e.message)
+  }
+}

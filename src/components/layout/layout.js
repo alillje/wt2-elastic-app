@@ -13,16 +13,14 @@ const Layout = ({ children }) => {
   return (
      <div className="layoutContainer">
                 <div className="layoutTop">
-                    TOP
+                    Top Github Repositories (2022)
                 </div>
                 <div className="layoutLeft">
-                    LEFT
                 </div>
                 <div className="layoutMain" >
                 {children}
                 </div>
                 <div className="layoutRight">
-                    RIGHT
                 </div>
     </div>
   )
