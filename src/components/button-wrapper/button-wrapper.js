@@ -12,7 +12,7 @@ const ButtonWrapper = () => {
   const buttonData = [
     {
       buttonText: 'Year of creation',
-      buttonProp: 'createdAt'
+      buttonProp: 'createdat'
     },
     {
       buttonText: 'Languages used',
@@ -28,7 +28,7 @@ const ButtonWrapper = () => {
 
       {buttonData.map(button => {
         return (
-          <SelectButton key={button.buttonProp} buttonText={button.buttonText} />
+          <SelectButton key={button.buttonProp} buttonText={button.buttonText} buttonProp={button.buttonProp} />
         )
       })}
     </div>

@@ -1,5 +1,6 @@
 import './stats-displayer.css'
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { getCreatedAtStats, getLanguageStats, getTypeStats } from '../../services/fetch-service'
 import { Chart, registerables } from 'chart.js'
 import { Line, Bar } from 'react-chartjs-2'
@@ -9,11 +10,12 @@ import { Line, Bar } from 'react-chartjs-2'
  *
  * @returns {React.ReactElement} - Layout Component.
  */
-const StatsDisplayer = ({ stat = 'language' }) => {
+const StatsDisplayer = () => {
   Chart.register(...registerables)
+  const stat = useSelector(state => state.data.dataToView)
   const [stats, setStats] = useState({})
   const [label, setLabel] = useState('')
-
+  console.log(stat)
   useEffect(() => {
     if (stat === 'createdat') {
     /**
@@ -46,7 +48,7 @@ const StatsDisplayer = ({ stat = 'language' }) => {
       setLabel('Type of repository')
       getTypeData()
     }
-  }, [])
+  }, [stat])
 
   if (stat) {
     return (

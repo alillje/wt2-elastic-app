@@ -13,7 +13,7 @@ const Layout = ({ main, bottom }) => {
   return (
      <div className="layoutContainer">
                 <div className="layoutTop">
-                    Top Github Repositories (2022)
+                    Top 1000 Github Repositories (2022)
                 </div>
                 <div className="layoutLeft">
                 </div>
