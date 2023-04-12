@@ -1,0 +1,33 @@
+.layoutContainer {
+    background-color: inherit;
+    width: 97vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10vw auto 10vw;
+    grid-template-rows: 150px repeat(5, 1fr) auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  
+  .layoutTop {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+  
+  .layoutLeft {
+    grid-area: 2 / 1 / 8 / 2;
+    height: calc(100vh);
+    width: 250px;
+  }
+  
+  .layoutMain {
+    grid-area: 2 / 2 / 8 / 3;
+    height: auto;
+    overflow-x: hidden;
+  
+  }
+
+  .layoutRight {
+    grid-area: 2 / 3 / 8 / 4;
+    height: calc(100vh);
+    width: 250px;
+  }
