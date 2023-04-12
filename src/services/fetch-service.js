@@ -7,7 +7,7 @@
  */
 
 /**
- * Gets created at stat
+ * Gets created at stats.
  *
  * @returns {object} - The recieved json data object.
  */
@@ -24,5 +24,26 @@ export const getCreatedAtStats = async () => {
   } catch (e) {
     console.log(e)
     throw new Error('Unable to retrieve created at data.', e.message)
+  }
+}
+
+/**
+ * Gets language stats stat
+ *
+ * @returns {object} - The recieved json data object.
+ */
+export const getLanguageStats = async () => {
+  const url = `${process.env.REACT_APP_API_URL}/stats/language`
+  console.log(url)
+  try {
+    const response = await fetch(url)
+    console.log(response)
+    const json = await response.json()
+    if (response.ok) {
+      return json.languages
+    }
+  } catch (e) {
+    console.log(e)
+    throw new Error('Unable to retrieve language data.', e.message)
   }
 }
