@@ -9,7 +9,7 @@ import { Line, Bar } from 'react-chartjs-2'
  *
  * @returns {React.ReactElement} - Layout Component.
  */
-const StatsDisplayer = ({ stat }) => {
+const StatsDisplayer = ({ stat = 'language' }) => {
   Chart.register(...registerables)
   const [stats, setStats] = useState({})
   const [label, setLabel] = useState('')

@@ -9,7 +9,7 @@ import * as React from 'react'
  * @param {React.ReactElement} children - The React Element to insert into the component.
  * @returns {React.ReactElement} - Layout Component.
  */
-const Layout = ({ children }) => {
+const Layout = ({ main, bottom }) => {
   return (
      <div className="layoutContainer">
                 <div className="layoutTop">
@@ -18,9 +18,12 @@ const Layout = ({ children }) => {
                 <div className="layoutLeft">
                 </div>
                 <div className="layoutMain" >
-                {children}
+                {main}
                 </div>
                 <div className="layoutRight">
+                </div>
+                <div className="layoutBottom">
+                    {bottom}
                 </div>
     </div>
   )
