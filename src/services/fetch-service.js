@@ -15,13 +15,11 @@ export const getCreatedAtStats = async () => {
   const url = `${process.env.REACT_APP_API_URL}/stats/created`
   try {
     const response = await fetch(url)
-    console.log(response)
     const json = await response.json()
     if (response.ok) {
       return json.createdAt
     }
   } catch (e) {
-    console.log(e)
     throw new Error('Unable to retrieve created at data.', e.message)
   }
 }
@@ -35,13 +33,11 @@ export const getLanguageStats = async () => {
   const url = `${process.env.REACT_APP_API_URL}/stats/language`
   try {
     const response = await fetch(url)
-    console.log(response)
     const json = await response.json()
     if (response.ok) {
       return json.languages
     }
   } catch (e) {
-    console.log(e)
     throw new Error('Unable to retrieve language data.', e.message)
   }
 }
@@ -60,7 +56,6 @@ export const getTypeStats = async () => {
       return json.types
     }
   } catch (e) {
-    console.log(e)
     throw new Error('Unable to retrieve language data.', e.message)
   }
 }
@@ -79,7 +74,6 @@ export const getNumberOfDocuments = async () => {
       return json.count
     }
   } catch (e) {
-    console.log(e)
     throw new Error('Unable to retrieve document count data.', e.message)
   }
 }

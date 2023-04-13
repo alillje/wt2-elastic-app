@@ -25,7 +25,6 @@ const StatsDisplayer = () => {
      */
     const getDocumentCount = async () => {
       const data = await getNumberOfDocuments()
-      console.log(data)
       setDocumentCount(data)
     }
     getDocumentCount()
