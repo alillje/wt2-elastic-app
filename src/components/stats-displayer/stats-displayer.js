@@ -99,7 +99,7 @@ const StatsDisplayer = () => {
   } else {
     return (
       <div className="stats-displayer-container">
-        <div className="stats-displayer-info"><div>This application displays data about the Top 1000 NodeJS GitHub Repositories (2022). Please choose an option to display some statistical data.</div> <div><i>(NOTE: The data set actually contains information about the top {documentCount} repositories. )</i></div></div>
+        <div className="stats-displayer-info"><div>This application displays data about the Top 1000 NodeJS GitHub Repositories (2022). Please choose an option to display some statistical data.</div> <div><i>(NOTE: The dataset actually contains information about the top {documentCount} repositories. )</i></div></div>
       </div>
     )
   }

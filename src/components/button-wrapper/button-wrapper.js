@@ -21,6 +21,10 @@ const ButtonWrapper = () => {
     {
       buttonText: 'Type of repository',
       buttonProp: 'type'
+    },
+    {
+      buttonText: 'Reset',
+      buttonProp: ''
     }
   ]
   return (
