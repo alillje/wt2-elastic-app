@@ -34,9 +34,7 @@ export const getCreatedAtStats = async () => {
 export const getLanguageStats = async () => {
   const url = `${process.env.REACT_APP_API_URL}/stats/language`
   try {
-    const response = await fetch(url, {
-      mode: 'no-cors'
-    })
+    const response = await fetch(url)
     console.log(response)
     const json = await response.json()
     if (response.ok) {
@@ -56,10 +54,7 @@ export const getLanguageStats = async () => {
 export const getTypeStats = async () => {
   const url = `${process.env.REACT_APP_API_URL}/stats/type`
   try {
-    const response = await fetch(url, {
-      mode: 'no-cors'
-    })
-    console.log(response)
+    const response = await fetch(url)
     const json = await response.json()
     if (response.ok) {
       return json.types
