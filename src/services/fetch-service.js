@@ -34,9 +34,10 @@ export const getCreatedAtStats = async () => {
  */
 export const getLanguageStats = async () => {
   const url = `${process.env.REACT_APP_API_URL}/stats/language`
-  console.log(url)
   try {
-    const response = await fetch(url)
+    const response = await fetch(url, {
+      mode: 'no-cors'
+    })
     console.log(response)
     const json = await response.json()
     if (response.ok) {
