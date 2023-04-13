@@ -10,4 +10,13 @@
   .stats-displayer-info {
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .stats-displayer-info > div i {
+    font-size: 14px;
   }

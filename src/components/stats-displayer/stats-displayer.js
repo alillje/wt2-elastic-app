@@ -1,25 +1,42 @@
 import './stats-displayer.css'
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { getCreatedAtStats, getLanguageStats, getTypeStats } from '../../services/fetch-service'
+import { getCreatedAtStats, getLanguageStats, getTypeStats, getNumberOfDocuments } from '../../services/fetch-service'
 import { Chart, registerables } from 'chart.js'
-import { Line, Bar } from 'react-chartjs-2'
+import { Bar } from 'react-chartjs-2'
 /**
  * Stats Displayer Component.
  * Displays stats.
- *
- * @returns {React.ReactElement} - Layout Component.
  */
 const StatsDisplayer = () => {
   Chart.register(...registerables)
   const stat = useSelector(state => state.data.dataToView)
   const [stats, setStats] = useState({})
   const [label, setLabel] = useState('')
-  console.log(stat)
+  const [documentCount, setDocumentCount] = useState(0)
+
+  /**
+   * Fired on inital render.
+   */
+  useEffect(() => {
+    /**
+     * Gets the document count.
+     */
+    const getDocumentCount = async () => {
+      const data = await getNumberOfDocuments()
+      console.log(data)
+      setDocumentCount(data)
+    }
+    getDocumentCount()
+  }, [])
+
+  /**
+   * Fired when 'stat' is updated.
+   */
   useEffect(() => {
     if (stat === 'createdat') {
     /**
-     *
+     * Gets the data for the created at stats.
      */
       const getYearCreatedAt = async () => {
         const data = await getCreatedAtStats()
@@ -29,7 +46,7 @@ const StatsDisplayer = () => {
       getYearCreatedAt()
     } else if (stat === 'language') {
       /**
-       *
+       * Gets the data for the language stats.
        */
       const getLanguageData = async () => {
         const data = await getLanguageStats()
@@ -39,7 +56,7 @@ const StatsDisplayer = () => {
       getLanguageData()
     } else if (stat === 'type') {
       /**
-       *
+       * Gets the data for the type stats.
        */
       const getTypeData = async () => {
         const data = await getTypeStats()
@@ -82,7 +99,7 @@ const StatsDisplayer = () => {
   } else {
     return (
       <div className="stats-displayer-container">
-        <div className="stats-displayer-info">This application displays data about the Top 1000 GitHub Repositories (2022). Please choose an option to display some statistical data. </div>
+        <div className="stats-displayer-info"><div>This application displays data about the Top 1000 NodeJS GitHub Repositories (2022). Please choose an option to display some statistical data.</div> <div><i>(NOTE: The data set actually contains information about the top {documentCount} repositories. )</i></div></div>
       </div>
     )
   }

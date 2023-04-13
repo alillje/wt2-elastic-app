@@ -64,3 +64,22 @@ export const getTypeStats = async () => {
     throw new Error('Unable to retrieve language data.', e.message)
   }
 }
+
+/**
+ * Gets type stats.
+ *
+ * @returns {object} - The recieved json data object.
+ */
+export const getNumberOfDocuments = async () => {
+  const url = `${process.env.REACT_APP_API_URL}/stats/count`
+  try {
+    const response = await fetch(url)
+    const json = await response.json()
+    if (response.ok) {
+      return json.count
+    }
+  } catch (e) {
+    console.log(e)
+    throw new Error('Unable to retrieve document count data.', e.message)
+  }
+}
