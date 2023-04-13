@@ -14,9 +14,7 @@
 export const getCreatedAtStats = async () => {
   const url = `${process.env.REACT_APP_API_URL}/stats/created`
   try {
-    const response = await fetch(url, {
-      mode: 'no-cors'
-    })
+    const response = await fetch(url)
     console.log(response)
     const json = await response.json()
     if (response.ok) {
