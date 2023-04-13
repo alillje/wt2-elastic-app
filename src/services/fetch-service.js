@@ -66,7 +66,7 @@ export const getTypeStats = async () => {
 }
 
 /**
- * Gets type stats.
+ * Gets the number of documents stats.
  *
  * @returns {object} - The recieved json data object.
  */

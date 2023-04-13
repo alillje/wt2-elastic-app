@@ -1,7 +1,7 @@
 
 /**
  * Redux data module.
- * Create a search slice with different actions
+ * Create a dataSlice slice with different actions
  *
  * @author Andreas Lillje <a.lillje@gmail.com>
  */

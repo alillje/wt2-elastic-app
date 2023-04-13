@@ -1,5 +1,5 @@
 import './stats-displayer.css'
-import { useState, useEffect } from 'react'
+import { React, useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { getCreatedAtStats, getLanguageStats, getTypeStats, getNumberOfDocuments } from '../../services/fetch-service'
 import { Chart, registerables } from 'chart.js'
@@ -7,6 +7,7 @@ import { Bar } from 'react-chartjs-2'
 /**
  * Stats Displayer Component.
  * Displays stats.
+ * @returns {React.ReactElement} - Select Button Component.
  */
 const StatsDisplayer = () => {
   Chart.register(...registerables)

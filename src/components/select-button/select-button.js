@@ -11,7 +11,7 @@ import { setDataToView } from '../../redux/reducers/data'
 const SelectButton = ({ buttonText = 'Button text', buttonProp }) => {
   const dispatch = useDispatch()
   /**
-   *
+   * Dispatches and sends the data to view to redux store.
    */
   const setViewData = () => {
     dispatch(
