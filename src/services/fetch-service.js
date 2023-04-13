@@ -17,6 +17,7 @@ export const getCreatedAtStats = async () => {
     const response = await fetch(url, {
       mode: 'no-cors'
     })
+    console.log(response)
     const json = await response.json()
     if (response.ok) {
       return json.createdAt
@@ -60,6 +61,7 @@ export const getTypeStats = async () => {
     const response = await fetch(url, {
       mode: 'no-cors'
     })
+    console.log(response)
     const json = await response.json()
     if (response.ok) {
       return json.types
