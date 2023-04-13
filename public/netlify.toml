@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/"
+  to = "tps://cscloud8-131.lnu.se/elastic-api/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
